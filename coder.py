@@ -2,6 +2,7 @@
 from openai import OpenAI
 from dotenv import load_dotenv
 import os
+from prompts import CODER_SYSTEM_PROMPT
 
 # Load variables from .env
 load_dotenv()
@@ -15,12 +16,22 @@ def generate_tool_code(requirement: str) -> str:
     
     # Try to send the requirement to the model
     try:
-        response = client.responses.create(
-            model="gpt-4.1-mini",
-            input=requirement
+        response = client.chat.completions.create(
+            model="gpt-4o", 
+            messages=[
+                {"role": "system", "content": CODER_SYSTEM_PROMPT},
+                {"role": "user", "content": f"Task: {requirement}"}
+            ],
+            temperature=0.2,
         )
+    
+        code = response.choices[0].message.content
 
-        return response.output_text
+        # Clean up markdown artifacts if the LLM ignores the 'no markdown' instruction
+        if "```python" in code:
+            code = code.split("```python")[1].split("```")[0]
+        
+        return code.strip()
 
     except Exception as e:
         print("API call failed.")
