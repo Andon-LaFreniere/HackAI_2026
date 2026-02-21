@@ -1,26 +1,24 @@
-# 1. Scans generated code for missing dependencies
-# 2. Installs necessary missing dependencies
+import re
 import subprocess
 import sys
-import re
 
 def install_dependencies(code: str):
-    """
-    Parses the generated code for '# depends: package_name' comments
-    and installs them into the current environment.
-    """
-    # Look for lines like '# depends: psutil' or '# depends: requests'
-    dependencies = re.findall(r'#\s*depends:\s*(\S+)', code)
+    # This regex now looks for words after 'depends:' and handles commas/whitespace
+    raw_deps = re.findall(r'#\s*depends:\s*(.*)', code)
     
+    dependencies = []
+    for line in raw_deps:
+        # Split by commas and whitespace, then strip punctuation
+        parts = [p.strip().rstrip(',').rstrip(';') for p in re.split(r'[,\s]+', line)]
+        dependencies.extend([p for p in parts if p])
+
     if not dependencies:
-        print("No extra dependencies found.")
         return
 
-    for lib in dependencies:
-        print(f"📦 Installing dependency: {lib}...")
+    for lib in list(set(dependencies)): # use set to avoid double installs
+        print(f"Installing dependency: {lib}...")
         try:
-            # Use sys.executable to ensure it installs into the SAME venv you are running in
             subprocess.check_call([sys.executable, "-m", "pip", "install", lib])
-            print(f"✅ Successfully installed {lib}")
-        except subprocess.CalledProcessError as e:
-            print(f"❌ Failed to install {lib}: {e}")
+            print(f"Successfully installed {lib}")
+        except Exception as e:
+            print(f"Failed to install {lib}: {e}")
