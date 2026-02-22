@@ -2,6 +2,7 @@
 
 ## HackAI 2026
 Team Name: ForgeMCP
+
 Team Members: Andon Lafreniere
 
 ForgeMCP is an autonomous agent framework that solves the problem of static toolsets in modern ai agents such as OpenClaw. Instead of relying on pre-configured tools, ForgeMCP identifies capability gaps in real-time and bridges them by autonomously writing, installing, and hot-loading its own Model Context Protocol servers.
