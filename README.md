@@ -5,7 +5,9 @@ Team Name: ForgeMCP
 
 Team Members: Andon Lafreniere
 
-ForgeMCP is an autonomous agent framework that solves the problem of static toolsets in modern ai agents such as OpenClaw. Instead of relying on pre-configured tools, ForgeMCP identifies capability gaps in real-time and bridges them by autonomously writing, installing, and hot-loading its own Model Context Protocol servers.
+Video: [link](https://youtu.be/AvvZ7OmW21w)
+
+ForgeMCP is an autonomous agent framework that solves the problem of static toolsets in modern ai agents such as [OpenClaw](https://openclaw.ai/). Instead of relying on pre-configured tools, ForgeMCP identifies capability gaps in real-time and bridges them by autonomously writing, installing, and hot-loading its own Model Context Protocol servers.
 
 Inspired by the vision of **OpenClaw**, ForgeMCP transforms the AI from a tool-user into a tool-maker.
 
