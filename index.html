@@ -1,76 +1,138 @@
-import { Github, Linkedin, Twitter, Mail, ExternalLink } from "lucide-react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForgeMCP - Agentic AI That Builds Its Own Capabilities</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0a0a0a; color: #ffffff; }
+        .text-emerald-forge { color: #10b981; }
+        .bg-emerald-forge { background-color: #10b981; }
+        .border-emerald-forge { border-color: #10b981; }
+        .hover-bg-emerald:hover { background-color: #059669; }
+        
+        /* Gradient background effect */
+        .gradient-bg {
+            background: radial-gradient(ellipse at top, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
+                        radial-gradient(ellipse at bottom, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+        }
+        
+        /* Animated gradient text */
+        .gradient-text {
+            background: linear-gradient(90deg, #10b981, #059669, #10b981);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shine 3s linear infinite;
+        }
+        
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
 
-const Index = () => {
-  return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col">
-      {/* Nav */}
-      <nav className="max-w-7xl mx-auto w-full px-6 py-8 flex justify-between items-center animate-fade-up">
-        <div className="text-2xl font-black tracking-tighter">
-          FORGE<span className="text-primary">MCP</span>
-        </div>
-        <div className="hidden md:flex space-x-10 text-sm font-bold uppercase tracking-widest text-muted-foreground">
-          <a href="https://github.com/Andon-LaFreniere/HackAI_2026" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">GitHub</a>
-          <a href="#demo" className="hover:text-primary transition-colors">Demo</a>
-        </div>
-      </nav>
+        /* Smooth scroll */
+        html { scroll-behavior: smooth; }
+        
+        /* Link hover effects */
+        .social-link {
+            transition: all 0.3s ease;
+        }
+        .social-link:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="font-sans selection:bg-[#10b981] selection:text-black antialiased">
 
-      {/* Hero */}
-      <main className="flex-1 max-w-5xl mx-auto px-6 pt-20 pb-32 text-center flex flex-col items-center justify-center">
-        <div className="animate-fade-up inline-block border border-primary/30 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest text-primary mb-8 uppercase backdrop-blur-sm bg-primary/5">
-          Built for HackAI 2026 @ Ohio State
+    <!-- Navigation -->
+    <nav class="max-w-7xl mx-auto px-6 py-8 flex justify-between items-center relative z-10">
+        <div class="text-2xl font-black tracking-tighter">FORGE<span class="text-emerald-forge">MCP</span></div>
+        <div class="hidden md:flex space-x-10 text-sm font-bold uppercase tracking-widest text-gray-400">
+            <a href="https://github.com/Andon-LaFreniere/HackAI_2026" class="hover:text-emerald-forge transition duration-300">GitHub</a>
+            <a href="#demo" class="hover:text-emerald-forge transition duration-300">Demo</a>
+            <a href="#about" class="hover:text-emerald-forge transition duration-300">About</a>
         </div>
-        <h1 className="animate-fade-up-delay text-5xl sm:text-6xl md:text-8xl font-black mb-8 tracking-tighter leading-[0.9]">
-          AGENTIC AI THAT BUILDS ITS OWN{" "}
-          <span className="text-primary">CAPABILITIES.</span>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="max-w-5xl mx-auto px-6 pt-16 md:pt-24 pb-32 text-center relative gradient-bg">
+        <div class="inline-block border border-emerald-forge/40 bg-emerald-forge/10 px-5 py-2 rounded-full text-xs font-bold tracking-widest text-emerald-forge mb-10 uppercase backdrop-blur-sm">
+            Built for HackAI 2026 @ Ohio State
+        </div>
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-black mb-8 tracking-tighter leading-none">
+            AGENTIC AI THAT BUILDS ITS <br/>OWN <span class="gradient-text">CAPABILITIES.</span>
         </h1>
-        <p className="animate-fade-up-delay-2 text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-          ForgeMCP identifies capability gaps in real-time and bridges them by autonomously writing, installing, and hot-loading its own MCP servers.
+        <p class="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+            ForgeMCP identifies capability gaps in real-time and bridges them by autonomously writing, installing, and hot-loading its own MCP servers. 
         </p>
-
-        <div className="animate-fade-up-delay-3 flex flex-col sm:flex-row justify-center gap-4">
-          <a
-            href="https://github.com/Andon-LaFreniere/HackAI_2026"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-primary text-primary-foreground px-10 py-4 rounded-xl font-bold text-lg hover:brightness-110 transition-all animate-pulse-glow inline-flex items-center gap-2"
-          >
-            <Github className="w-5 h-5" />
-            View on GitHub
-          </a>
-          <a
-            href="#demo"
-            className="border border-border bg-secondary/50 backdrop-blur-sm text-foreground px-10 py-4 rounded-xl font-bold text-lg hover:bg-secondary transition-all inline-flex items-center gap-2"
-          >
-            <ExternalLink className="w-5 h-5" />
-            View Demo
-          </a>
+        
+        <div class="flex flex-col sm:flex-row justify-center gap-4 md:gap-6">
+            <a href="https://github.com/Andon-LaFreniere/HackAI_2026" class="bg-emerald-forge text-black px-8 md:px-10 py-4 md:py-5 rounded-xl font-bold text-base md:text-lg hover-bg-emerald transition-all duration-300 shadow-2xl shadow-emerald-900/30 hover:shadow-emerald-900/50 hover:scale-105">
+                View on GitHub
+            </a>
+            <a href="#demo" class="border border-gray-700 bg-white/5 backdrop-blur-sm text-white px-8 md:px-10 py-4 md:py-5 rounded-xl font-bold text-base md:text-lg hover:bg-white/10 hover:border-gray-600 transition-all duration-300">
+                View Demo
+            </a>
         </div>
-      </main>
+    </main>
 
-      {/* Footer */}
-      <footer className="border-t border-border bg-card/50 py-12">
-        <div className="max-w-4xl mx-auto px-6 text-center space-y-6">
-          <p className="text-sm text-muted-foreground uppercase tracking-widest font-bold">Built by</p>
-          <p className="text-2xl font-black tracking-tight">Andon Lafreniere</p>
-          <div className="flex justify-center gap-5 pt-2">
-            <a href="https://github.com/Andon-LaFreniere" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="GitHub">
-              <Github className="w-5 h-5" />
-            </a>
-            <a href="https://linkedin.com/in/andon-lafreniere" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="LinkedIn">
-              <Linkedin className="w-5 h-5" />
-            </a>
-            <a href="https://x.com/AndonLafreniere" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Twitter/X">
-              <Twitter className="w-5 h-5" />
-            </a>
-            <a href="mailto:andon@example.com" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Email">
-              <Mail className="w-5 h-5" />
-            </a>
-          </div>
-          <p className="text-xs text-muted-foreground pt-4">© 2026 ForgeMCP. All rights reserved.</p>
+    <!-- Features Section (Optional - adds visual interest) -->
+    <section id="about" class="border-t border-gray-900 py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 tracking-tight">How It <span class="text-emerald-forge">Works</span></h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="border border-gray-800 bg-white/5 backdrop-blur-sm p-8 rounded-2xl hover:border-emerald-forge/50 transition-all duration-300">
+                    <h3 class="text-xl font-bold mb-3 text-emerald-forge">Detect Gaps</h3>
+                    <p class="text-gray-400 leading-relaxed">Identifies missing capabilities when faced with new tasks or requests</p>
+                </div>
+                <div class="border border-gray-800 bg-white/5 backdrop-blur-sm p-8 rounded-2xl hover:border-emerald-forge/50 transition-all duration-300">
+                    <h3 class="text-xl font-bold mb-3 text-emerald-forge">Auto-Generate</h3>
+                    <p class="text-gray-400 leading-relaxed">Writes and installs custom MCP servers on-the-fly to fill capability gaps</p>
+                </div>
+                <div class="border border-gray-800 bg-white/5 backdrop-blur-sm p-8 rounded-2xl hover:border-emerald-forge/50 transition-all duration-300">
+                    <h3 class="text-xl font-bold mb-3 text-emerald-forge">Hot-Load</h3>
+                    <p class="text-gray-400 leading-relaxed">Seamlessly integrates new capabilities without interruption or restart</p>
+                </div>
+            </div>
         </div>
-      </footer>
-    </div>
-  );
-};
+    </section>
 
-export default Index;
+    <!-- Footer -->
+    <footer class="border-t border-gray-900 py-12 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="text-xl font-semibold text-white mb-6">Built by Andon Lafreniere</p>
+            
+            <!-- Social Links -->
+            <div class="flex justify-center gap-6 mb-8">
+                <a href="https://github.com/Andon-LaFreniere" target="_blank" rel="noopener noreferrer" class="social-link text-gray-400 hover:text-emerald-forge transition-colors duration-300" aria-label="GitHub">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/andonlaf/" target="_blank" rel="noopener noreferrer" class="social-link text-gray-400 hover:text-emerald-forge transition-colors duration-300" aria-label="LinkedIn">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+                <a href="https://x.com/AndonL72000" target="_blank" rel="noopener noreferrer" class="social-link text-gray-400 hover:text-emerald-forge transition-colors duration-300" aria-label="Twitter/X">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+                <a href="mailto:andonlafreniere2706@gmail.com" class="social-link text-gray-400 hover:text-emerald-forge transition-colors duration-300" aria-label="Email">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                </a>
+            </div>
+            
+            <p class="text-sm text-gray-500">
+                © 2026 ForgeMCP. Open source project built for HackAI 2026.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
